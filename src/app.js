@@ -1,14 +1,6 @@
-// // import '../src/utils.js';
-// import subtract, { square, add } from './utils.js'
-
-console.log('app.js is running');
-
-// console.log(square(10));
-// console.log(add(10, 123));
-// console.log(subtract(10, 123));
-
-import seniorCit, { isAdult, canDrink } from './person.js'
-
-console.log(isAdult(100));
-console.log(canDrink(21));
-console.log(seniorCit(65));
+import React from 'react';
+import ReactDOM from 'react-dom';
+// if you are using Webpack > 3 then you only need to install babel-preset-env, since this preset accounts for es2015, es2016 and es2017.
+// console.log(validator.isEmail('test@hotmail.c'));
+const template = <p>this is jsx from webpack</p>;
+ReactDOM.render(template, document.getElementById('app'));
