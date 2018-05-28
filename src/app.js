@@ -1,91 +1,14 @@
-class IndecisionApp extends React.Component {
-    render() {
+// // import '../src/utils.js';
+// import subtract, { square, add } from './utils.js'
 
-        const title = 'Indecision';
-        const subtitle = 'Put your life in the hands of a computer';
-        const options = ['Thing one', 'Thing Two', 'Thing four'];
+console.log('app.js is running');
 
-        return (
-            <div>
-                <Header title={title} subtitle={subtitle} />
-                <Action />
-                <Options options={options} />
-                <AddOption />
-            </div>
-        );
-    }
-}
+// console.log(square(10));
+// console.log(add(10, 123));
+// console.log(subtract(10, 123));
 
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
-}
+import seniorCit, { isAdult, canDrink } from './person.js'
 
-class Action extends React.Component {
-    handlePick() {
-
-    }
-    render() {        
-        return (
-            <div>
-                <button onClick={this.handlePick}>What should I do?</button>
-            </div>
-        );
-    }
-}
-
-class Options extends React.Component {
-    handleRemoveAll() {
-        alert('handleRemoveAll');
-    }
-    render() {
-        return (
-            <div>
-            <button onClick={this.handleRemoveAll}>Remove All</button>
-            {
-                this.props.options.map((option) => <Option key={option} optionText={option}>{option}</Option>)
-            }
-            </div>
-        );
-    }
-}
-
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-            {this.props.optionText}
-            </div>
-        );
-    }
-}
-
-class AddOption extends React.Component {
-    handleAddOption(e) {
-        e.preventDefault();
-
-        const option = e.target.elements.option.value;
-
-        if(option.trim()) {
-            alert(`Our option is: ${option.trim()}`);
-        }
-    }
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleAddOption}>
-                    <input type="text" name="option"/>
-                    <button>Add Option</button>
-                </form>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+console.log(isAdult(100));
+console.log(canDrink(21));
+console.log(seniorCit(65));
