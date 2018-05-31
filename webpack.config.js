@@ -13,8 +13,27 @@ module.exports ={
                     test: /\.js$/,
                     include: path.join(__dirname, './src'),
                     exclude: [/node_modules/]
+                }, 
+                {
+                    test: /\.scss$/,
+                    use: [
+                            {
+                                loader: 'style-loader'
+                            },
+                            {
+                                loader: 'css-loader'
+                            },
+                            {
+                                loader: 'sass-loader'
+                            }
+                        ]
                 }
             ]
     },
-    mode: 'development'
+    //mode: 'development',
+    //development only, this is an expensive call
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    }
 };
