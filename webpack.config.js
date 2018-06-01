@@ -30,7 +30,7 @@ module.exports ={
                 }
             ]
     },
-    //mode: 'development',
+    mode: 'development',
     //development only, this is an expensive call
     devtool: 'cheap-module-eval-source-map',
     devServer: {
